@@ -1,9 +1,10 @@
-
-
 RUN touch /tmp/filemustbehere
+RUN cat > /tmp/startup.sh <<< 'sleep infinity &'
+RUN chmod +x /tmp/startup.sh
+INSTALL psmisc
 
 START_BEGIN
-RUN sleep infinity
+RUN /tmp/startup.sh
 START_END
 
 TEST_BEGIN

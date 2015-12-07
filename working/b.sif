@@ -1,4 +1,4 @@
-RUN /tmp/secondfilecreated
+RUN touch /tmp/secondfilecreated
 
 TEST_BEGIN
 RUN cat /tmp/secondfilecreated
