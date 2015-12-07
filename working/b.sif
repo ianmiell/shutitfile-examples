@@ -1,0 +1,5 @@
+RUN /tmp/secondfilecreated
+
+TEST_BEGIN
+RUN cat /tmp/secondfilecreated
+TEST_END

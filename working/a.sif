@@ -1,0 +1,15 @@
+
+
+RUN touch /tmp/filemustbehere
+
+START_BEGIN
+RUN sleep infinity
+START_END
+
+TEST_BEGIN
+RUN cat /tmp/filemustbehere
+TEST_END
+
+STOP_BEGIN
+RUN killall sleep
+STOP_END
