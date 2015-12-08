@@ -1,0 +1,16 @@
+RUN touch /tmp/fileisnotthere
+RUN cat > /tmp/startup.sh <<< 'sleep infinity &'
+RUN chmod +x /tmp/startup.sh
+INSTALL psmisc
+
+START_BEGIN
+RUN /tmp/startup.sh
+START_END
+
+TEST_BEGIN
+RUN cat /tmp/filemustbehere
+TEST_END
+
+STOP_BEGIN
+RUN killall sleep
+STOP_END
