@@ -1,5 +1,7 @@
 RUN touch /tmp/secondfilecreated
 
+DEPENDS a.b.c.d
+
 TEST_BEGIN
 RUN cat /tmp/secondfilecreated
 TEST_END
